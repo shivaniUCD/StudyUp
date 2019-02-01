@@ -58,7 +58,7 @@ class EventServiceImplTest {
 
 	@AfterEach
 	void tearDown() throws Exception {
-		DataStorage.eventData.clear();
+//		DataStorage.eventData.clear();
 	}
 
 	@Test
@@ -71,7 +71,11 @@ class EventServiceImplTest {
 	}
 	
 	@Test
-	@Disabled
+	void show_wrongCase() {
+		assertEquals(0, DataStorage.eventData.size());
+	}
+	
+	@Test
 	void testUpdateEvent_badCase() {
 		Event event = null;
 		Assertions.assertThrows(StudyUpException.class, () -> {
